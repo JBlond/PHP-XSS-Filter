@@ -8,6 +8,7 @@
 * @access public
  */
 class xss_filter {
+	private $allow_http_value = false;
 	private $input;
 	private $preg_patterns = array(
 		// Fix &entity\n
@@ -52,13 +53,35 @@ class xss_filter {
 	}
 
 	/**
+	* xss_filter::allow_http()
+	*
+	*/
+	public function allow_http(){
+		$this->allow_http_value = true;
+	}
+
+	/**
+	* xss_filter::disallow_http()
+	*
+	*/
+	public function disallow_http(){
+		$this->allow_http_value = false;
+	}
+
+	/**
 	* xss_filter::normal_replace()
 	*
 	* @access private
 	*/
 	private function normal_replace(){
 		$this->input = str_replace(array('&amp;', '&lt;', '&gt;'), array('&amp;amp;', '&amp;lt;', '&amp;gt;'), $this->input);
-		$this->input = str_replace(array('&', '%', 'script', 'http', 'localhost'), array('', '', '', '', ''), $this->input);
+		if($this->allow_http_value == false){
+			$this->input = str_replace(array('&', '%', 'script', 'http', 'localhost'), array('', '', '', '', ''), $this->input);
+		}
+		else
+		{
+			$this->input = str_replace(array('&', '%', 'script', 'localhost'), array('', '', '', ''), $this->input);
+		}
 		foreach($this->normal_patterns as $pattern => $replacement){
 			$this->input = str_replace($pattern,$replacement,$this->input);
 		}
