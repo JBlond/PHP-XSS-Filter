@@ -80,7 +80,7 @@ class xss_filter {
 		}
 		else
 		{
-			$this->input = str_replace(array('&', '%', 'script', 'localhost'), array('', '', '', ''), $this->input);
+			$this->input = str_replace(array('&', '%', 'script', 'localhost','../'), array('', '', '', '',''), $this->input);
 		}
 		foreach($this->normal_patterns as $pattern => $replacement){
 			$this->input = str_replace($pattern,$replacement,$this->input);
