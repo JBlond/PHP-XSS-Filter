@@ -1,4 +1,4 @@
-![Code Climate](https://codeclimate.com/github/JBlond/PHP-XSS-Filter/badges/gpa.svg)
+[![Code Climate](https://codeclimate.com/github/JBlond/PHP-XSS-Filter/badges/gpa.svg)](https://codeclimate.com/github/JBlond/PHP-XSS-Filter)
 
 PHP-XSS-Filter
 ==============
