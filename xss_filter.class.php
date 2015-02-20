@@ -75,7 +75,7 @@ class xss_filter {
 	*/
 	private function normal_replace(){
 		$this->input = str_replace(array('&amp;', '&lt;', '&gt;'), array('&amp;amp;', '&amp;lt;', '&amp;gt;'), $this->input);
-		if($this->allow_http_value == false){
+		if($this->allow_http_value === false){
 			$this->input = str_replace(array('&', '%', 'script', 'http', 'localhost'), array('', '', '', '', ''), $this->input);
 		}
 		else
