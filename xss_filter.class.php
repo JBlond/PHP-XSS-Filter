@@ -2,14 +2,23 @@
 /**
 * xss_filter
 *
-* @package api
 * @author mario.brandt
-* @copyright Copyright (c) 2013
+* @copyright Copyright (c) 2013 - 2015
 * @access public
  */
 class xss_filter {
+
 	private $allow_http_value = false;
+
+	/**
+	* @var str $input
+	* @access private
+	*/
 	private $input;
+	/**
+	* @var array $preg_patterns
+	* @access private
+	*/
 	private $preg_patterns = array(
 		// Fix &entity\n
 		'!(&#0+[0-9]+)!' => '$1;',
@@ -55,6 +64,7 @@ class xss_filter {
 	/**
 	* xss_filter::allow_http()
 	*
+	* @access public
 	*/
 	public function allow_http(){
 		$this->allow_http_value = true;
@@ -63,9 +73,21 @@ class xss_filter {
 	/**
 	* xss_filter::disallow_http()
 	*
+	* @access public
 	*/
 	public function disallow_http(){
 		$this->allow_http_value = false;
+	}
+
+	/**
+	* xss_filter::remove_get_parameters()
+	*
+	* @access public
+	* @param $url str
+	* @return str
+	*/
+	public function remove_get_parameters($url){
+		return preg_replace('/\?.*/', '', $url);
 	}
 
 	/**
