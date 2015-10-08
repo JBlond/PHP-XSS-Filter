@@ -44,7 +44,12 @@ class xss_filter {
 		'"' => '&quot;',
 		'&' => '&amp;',
 		'<' => '&lt;',
-		'>' => '&gt;'
+		'>' => '&gt;',
+		//possible SQL injection remove from string with there is no '
+		'SELECT * FROM' => '',
+		'SELECT(' => '',
+		'SLEEP(' => '',
+		'AND (' => ''
 	);
 
 	/**
