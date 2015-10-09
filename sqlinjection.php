@@ -9,10 +9,11 @@ $mysqli = new mysqli("localhost", "root", "", "mysql");
 /* check connection */
 if (mysqli_connect_errno()) {
 	printf("Connect failed: %s\n", mysqli_connect_error());
-	exit();
 }
+else
+{
+	$string = "teilnehmer_nr=1&singleTarif=1 AND (SELECT * FROM (SELECT(SLEEP(5)))lVqc)&abschlussart=jahresabschluss&reisebeginn=-1&reiseende=-1&beginnJahresVers=1445292000&teilnmAlter=29&weltgeltung=1";
 
-$string = "teilnehmer_nr=1&singleTarif=1 AND (SELECT * FROM (SELECT(SLEEP(5)))lVqc)&abschlussart=jahresabschluss&reisebeginn=-1&reiseende=-1&beginnJahresVers=1445292000&teilnmAlter=29&weltgeltung=1";
-
-echo $xss->filter_it($string) . '<br><br><br>';
-echo $mysqli->real_escape_string($string);
+	echo $xss->filter_it($string) . '<br><br><br>';
+	echo $mysqli->real_escape_string($string);
+}
