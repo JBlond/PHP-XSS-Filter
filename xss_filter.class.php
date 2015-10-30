@@ -11,7 +11,7 @@ class xss_filter {
 	private $allow_http_value = false;
 
 	/**
-	* @var str $input
+	* @var string $input
 	* @access private
 	*/
 	private $input;
@@ -57,7 +57,7 @@ class xss_filter {
 	*
 	* @access public
 	* @param mixed $in
-	* @return
+	* @return string
 	*/
 	public function filter_it($in){
 		$this->input = html_entity_decode($in, ENT_NOQUOTES, 'UTF-8');
@@ -88,8 +88,8 @@ class xss_filter {
 	* xss_filter::remove_get_parameters()
 	*
 	* @access public
-	* @param $url str
-	* @return str
+	* @param $url string
+	* @return string
 	*/
 	public function remove_get_parameters($url){
 		return preg_replace('/\?.*/', '', $url);
