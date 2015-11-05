@@ -49,7 +49,8 @@ class xss_filter {
 		'SELECT * FROM' => '',
 		'SELECT(' => '',
 		'SLEEP(' => '',
-		'AND (' => ''
+		'AND (' => '',
+		' AND' => ''
 	);
 
 	/**
