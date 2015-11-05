@@ -50,7 +50,8 @@ class xss_filter {
 		'SELECT(' => '',
 		'SLEEP(' => '',
 		'AND (' => '',
-		' AND' => ''
+		' AND' => '',
+		'(CASE' => ''
 	);
 
 	/**
