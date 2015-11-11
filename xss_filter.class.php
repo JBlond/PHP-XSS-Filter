@@ -58,11 +58,11 @@ class xss_filter {
 	* xss_filter::filter_it()
 	*
 	* @access public
-	* @param mixed $in
+	* @param string $input
 	* @return string
 	*/
-	public function filter_it($in){
-		$this->input = html_entity_decode($in, ENT_NOQUOTES, 'UTF-8');
+	public function filter_it($input){
+		$this->input = html_entity_decode($input, ENT_NOQUOTES, 'UTF-8');
 		$this->normal_replace();
 		$this->do_grep();
 		return $this->input;
