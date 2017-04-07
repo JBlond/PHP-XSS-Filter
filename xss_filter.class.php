@@ -3,7 +3,7 @@
 * xss_filter
 *
 * @author mario.brandt
-* @copyright Copyright (c) 2013 - 2015
+* @copyright Copyright (c) 2013 - 2017
 * @access public
  */
 class xss_filter {
