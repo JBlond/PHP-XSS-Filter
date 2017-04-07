@@ -43,8 +43,11 @@ class xss_filter {
 		'#</*(?:applet|b(?:ase|gsound|link)|embed|frame(?:set)?|i(?:frame|layer)|l(?:ayer|ink)|meta|object|s(?:cript|tyle)|title|xml)[^>]*+>#i' => ''
 	);
 
+	/**
+	 * @var array
+	 */
 	private $normal_patterns = array(
-		'\'' => '&lsquo;',
+		'\'' => '&apos;',
 		'"' => '&quot;',
 		'&' => '&amp;',
 		'<' => '&lt;',
@@ -113,7 +116,7 @@ class xss_filter {
 		}
 		else
 		{
-			$this->input = str_replace(array('&', '%', 'script', 'localhost','../'), array('', '', '', '',''), $this->input);
+			$this->input = str_replace(array('&', '%', 'script', 'localhost', '../'), array('', '', '', '', ''), $this->input);
 		}
 		foreach($this->normal_patterns as $pattern => $replacement){
 			$this->input = str_replace($pattern,$replacement,$this->input);
