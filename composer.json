@@ -1,5 +1,5 @@
 {
-  "name": "JBlond/PHP-XSS-Filter",
+  "name": "jblond/php-xss-filter",
   "description": "PHP XSS Filter",
   "minimum-stability": "stable",
   "license": "MIT",
