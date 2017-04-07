@@ -1,0 +1,12 @@
+{
+  "name": "JBlond/PHP-XSS-Filter",
+  "description": "PHP XSS Filter",
+  "minimum-stability": "stable",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "JBlond",
+      "email": "leet31337@web.de"
+    }
+  ]
+}
