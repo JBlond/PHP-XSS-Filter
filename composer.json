@@ -2,10 +2,26 @@
   "name": "jblond/php-xss-filter",
   "description": "PHP XSS Filter",
   "license": "MIT",
+  "keywords": [
+    "php",
+    "xss"
+  ],
   "authors": [
     {
       "name": "JBlond",
       "email": "leet31337@web.de"
     }
-  ]
+  ],
+  "require": {
+    "php" : ">= 5.6"
+
+  },
+  "require-dev": {
+    "ext-mysqli": "*"
+  },
+  "autoload": {
+    "psr-4": {
+      "jblond\\": "lib/jblond"
+    }
+  }
 }

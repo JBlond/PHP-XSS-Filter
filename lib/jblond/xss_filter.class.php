@@ -1,4 +1,5 @@
 <?php
+namespace jblond;
 /**
 * xss_filter
 *
