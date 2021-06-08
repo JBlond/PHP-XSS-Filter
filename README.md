@@ -16,3 +16,6 @@ composer require jblond/php-xss-filter
 	$string = $xss->filter_it($string );
 	echo $string;
 ```
+## Contribute
+
+Open a PR, open an issue
